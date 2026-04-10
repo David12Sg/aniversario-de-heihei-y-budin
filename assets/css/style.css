@@ -1,0 +1,258 @@
+:root {
+    --bunny-pink: #FFC1D6; /* Rosa New Jeans (pastel suave) */
+    --baby-blue: #A2D2FF; /* Azul New Jeans (pastel suave) */
+    --text-dark: #4A4A4A;
+    --text-light: #F7F7F7;
+    --card-bg: #FFFFFF;
+    --border-radius-main: 30px;
+    --border-radius-card: 20px;
+    --shadow-main: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    background-color: #fefcfd; /* Fondo rosa muy, muy pálido */
+    overflow-x: hidden;
+}
+
+/* Tipografía New Jeans Style */
+h1, h2, h3 {
+    font-family: 'Fredoka', sans-serif;
+    color: var(--bunny-pink);
+    text-align: center;
+    font-weight: 600;
+}
+
+h1 { font-size: 4rem; color: white; text-shadow: 2px 2px 5px rgba(0,0,0,0.3); }
+h2 { font-size: 2.8rem; margin-bottom: 40px; color: var(--baby-blue); }
+
+.container, .container-flex { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.container-flex { display: flex; gap: 40px; align-items: center; }
+.container-flex.reverse { flex-direction: row-reverse; }
+
+/* PORTADA PRINCIPAL */
+.hero-section {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: var(--text-light);
+}
+
+.hero-overlay {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.4); /* Capa oscura sutil para el texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content { text-align: center; max-width: 800px; }
+
+.love-subtitle {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    color: var(--bunny-pink);
+}
+
+/* CONTADOR CON FOCA Y PINGÜINO */
+.timer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.animal-sticker {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white; /* Efecto sticker */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    animation: float 3s ease-in-out infinite;
+}
+
+.animal-sticker.left { animation-delay: 0.5s; }
+.animal-sticker.right { animation-delay: 1.5s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+#contador {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    background-color: white;
+    padding: 20px 35px;
+    border-radius: 50px;
+    box-shadow: 0 10px 0px var(--baby-blue); /* Sombra estilo pegatina */
+}
+
+/* SECCIONES DE MENSAJES + FOTOS PRINCIPALES */
+section { padding: 80px 0; }
+
+.love-letter-section, .story-section { background-color: white; }
+
+.text-content { flex: 1; padding: 40px; border-radius: var(--border-radius-main); }
+.image-content { flex: 1; position: relative; border-radius: var(--border-radius-main); overflow: hidden; }
+.image-content img { width: 100%; border-radius: 20px; display: block; box-shadow: var(--shadow-main); }
+
+/* Efecto de borde tipo New Jeans */
+.image-content.border-pink { border: 8px solid var(--bunny-pink); }
+.image-content.border-blue { border: 8px solid var(--baby-blue); }
+
+.quote-card { border-left: 10px solid var(--bunny-pink); background-color: #fff9fb; box-shadow: 15px 15px 0px var(--baby-blue); }
+.story-card { border-right: 10px solid var(--baby-blue); background-color: #f7fbff; box-shadow: -15px 15px 0px var(--bunny-pink); }
+
+.text-content p { font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px; color: var(--text-dark); }
+.text-content p:last-child { margin-bottom: 0; font-weight: 600; }
+
+/* GALERÍAS New Jeans Style */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.photo-card, .photo-card-her {
+    background-color: white;
+    padding: 10px;
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--shadow-main);
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+}
+
+.photo-card img, .photo-card-her img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+}
+
+.photo-card:hover, .photo-card-her:hover {
+    transform: scale(1.05) rotate(2deg); /* Un pequeño giro New Jeans */
+    border-color: var(--bunny-pink);
+    box-shadow: 0 15px 30px rgba(255, 193, 214, 0.4);
+}
+
+/* SECCIÓN DEL VIDEO (YouTube Shorts) */
+.video-section { background-color: #fffcfd; text-align: center; }
+
+.video-container-shorts {
+    max-width: 350px; /* Para mantener el formato vertical de Shorts */
+    margin: 40px auto;
+    border-radius: var(--border-radius-main);
+    border: 8px solid var(--baby-blue);
+    box-shadow: 15px 15px 0px var(--bunny-pink);
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 177.78%; /* Proporción 9:16 para Shorts verticales */
+}
+
+.video-container-shorts iframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+}
+
+/* GALERÍA ELLA SOLO CON TEXTO DE FONDO */
+.her-gallery { position: relative; overflow: hidden; padding: 120px 0; }
+
+.her-gallery h2 { margin-bottom: 60px; color: var(--bunny-pink); }
+
+.her-gallery-background-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    font-family: 'Pacifico', cursive;
+    font-size: 5rem;
+    color: rgba(255, 193, 214, 0.1); /* Texto de fondo muy sutil */
+    text-align: center;
+    line-height: 1.2;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.her-only { z-index: 2; position: relative; }
+
+/* PIE DE PÁGINA */
+footer {
+    background-color: white;
+    padding: 40px 0;
+    text-align: center;
+    border-top: 5px solid var(--baby-blue);
+}
+
+footer p { color: var(--bunny-pink); font-size: 1.1rem; }
+/* --- AJUSTE PARA LAS FOTOS DE HEIDI (CARA Y FONDO) --- */
+
+.marco-especial {
+    /* Aquí está el fondo rosado lindo. 
+       Si prefieres gris oscuro, borra esta línea y pon: background-color: #3b3b3b; */
+    background-color: #FF9EBB; 
+    border: 5px solid white; /* Un borde blanco extra para que parezca una foto Polaroid */
+    padding: 10px;
+    box-shadow: 0 15px 30px rgba(255, 158, 187, 0.4); /* Sombra rosada */
+}
+
+.marco-especial img {
+    /* Esto es la magia: obliga a la foto a enfocarse en la parte de arriba (la cara) 
+       en lugar de recortar justo en el centro del cuerpo */
+    object-position: center 10%; 
+}
+/* --- HACER QUE TODO EL FONDO SEA AZUL BONITO --- */
+body, 
+.love-letter-section, 
+.main-gallery,
+.story-section, 
+.video-section, 
+.her-gallery, 
+footer {
+    /* Este es un azul pastel/cielo precioso que hace resaltar mucho el rosado */
+    background-color: #d1ebfc !important; 
+}
+
+/* El marco rosado tipo Polaroid para TODAS las fotos */
+.marco-rosado {
+    background-color: #FF9EBB !important; 
+    border: 5px solid white !important; 
+    padding: 10px !important;
+    box-shadow: 0 15px 30px rgba(255, 158, 187, 0.4) !important;
+    border-radius: 20px;
+}
+
+.marco-rosado img {
+    border-radius: 10px;
+}
+
+/* Para centrar la carita SOLO en las fotos que lo necesitan */
+.marco-especial img {
+    object-position: center 10%; 
+}
+
+/* El estilo para el texto hermoso de abajo de sus fotos */
+.dedicatoria-final {
+    text-align: center;
+    font-size: 1.8rem;
+    font-family: 'Pacifico', cursive;
+    color: #FF9EBB; /* Letra rosada */
+    margin-top: 50px;
+    padding: 0 20px;
+    text-shadow: 2px 2px 0px white; /* Sombrita blanca para que se lea perfecto */
+}
